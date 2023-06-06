@@ -52,5 +52,6 @@ if __name__ == "__main__":
         cut(driver,urls)
         line = f.readline()
 
+    print("done!!!")
     w.close()
     driver.quit()
