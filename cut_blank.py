@@ -2,7 +2,10 @@ import cv2
 import os 
 import numpy as np 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> cb36f60 (add cut_v2)
 def cut_write(img):
     window_height,window_width = 200,200
     h,w = img.shape[:2]
@@ -11,7 +14,11 @@ def cut_write(img):
         window_region = img[y:y+window_height,:window_width]
         target= np.sum(window_region[:,:,0])//(window_height*window_width)
         for j in range(window_height):
+<<<<<<< HEAD
             for i in range(window_width):
+=======
+            for i in range(10,window_width):
+>>>>>>> cb36f60 (add cut_v2)
                 if target-5 <= window_region[j,i,0] <= target+5:
                     flag=True
                 else:
