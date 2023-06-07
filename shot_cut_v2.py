@@ -34,16 +34,18 @@ def cut(driver,urls):
 
 if __name__ == "__main__":
     options = Options()
+    options.page_load_strategy = 'eager'
     options.add_argument('--headless')     # 无头模式，不显示浏览器界面
     options.add_argument('--disable-gpu')  # 禁用GPU加速
-    # options.add_argument('--referer=www.baidu.com')    #add referer ？？？
+    # options.add_argument('--referer=www.baidu.com')    #add referer ？？？ no use 
     options.add_argument('--user-agent=Mozilla/5.0 (iPhone; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Mobile/15E148 Safari/604.1')
     options.add_experimental_option('excludeSwitches', ['enable-logging'])
     
     path_to_chromedriver = r'C:\Users\97696\Downloads\chromedriver.exe'
     # 创建Chrome浏览器实例
     driver = webdriver.Chrome(path_to_chromedriver, options=options)
-    driver.set_page_load_timeout(8)    #add timeout 
+    driver.set_page_load_timeout(10)    #add timeout 
+    
     
     save_imgs = './imgs_cut_v2/'
     if not os.path.exists(save_imgs):
